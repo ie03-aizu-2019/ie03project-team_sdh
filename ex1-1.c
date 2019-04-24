@@ -77,7 +77,7 @@ int main(){
     }
     
     //step 3
-    if((0<=s && s<=1) == 1 && (0<=t && t<=1) == 1){
+    if((0<s && s<1) == 1 && (0<t && t<1) == 1){
         //交差あり step4
         x_result = p1_x + (q1_y - p1_y) * s;
         y_result = p2_y + (q2_y - p2_y) * t;
