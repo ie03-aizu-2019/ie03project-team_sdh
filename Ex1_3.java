@@ -119,14 +119,14 @@ public class Ex1_3{
                         }
                     }
                     j = j + 2;
-                    //System.out.println("p1_x:"+p1_x+" q1_x:"+q1_x+" p1_x:"+p2_x+" q2_x:"+q2_x);
+                    
                     
 
                     //交差判定
                     matrix_A = ((q1_x - p1_x) * (p2_y - q2_y)) + ((q2_x - p2_x) * (q1_y - p1_y));
 
                     if(-eps <= matrix_A && matrix_A <= eps){
-                        //System.out.println("NA");
+                        
                         
                     }else{
                         s = ((p2_y - q2_y) * (p2_x - p1_x) + (q2_x - p2_x) * (p2_y - p1_y)) / (double)matrix_A;
@@ -165,7 +165,7 @@ public class Ex1_3{
 
         count_intersection = 0;
 
-        //ダイクストラの配列に値を入れていく
+        
         for(i=0;i<M*2;i=i+2){
             for(j=0;j<M*2;j=j+2){
                 if(i == j) continue;
@@ -204,7 +204,7 @@ public class Ex1_3{
                     matrix_A = ((q1_x - p1_x) * (p2_y - q2_y)) + ((q2_x - p2_x) * (q1_y - p1_y));
 
                     if(-eps <= matrix_A && matrix_A <= eps){
-                        //System.out.println("NA");
+                        
                         
                     }else{
                         s = ((p2_y - q2_y) * (p2_x - p1_x) + (q2_x - p2_x) * (p2_y - p1_y)) / (double)matrix_A;
@@ -229,7 +229,7 @@ public class Ex1_3{
                         bd_x = bd_x.setScale(10, BigDecimal.ROUND_HALF_UP);
                         bd_y = bd_y.setScale(10, BigDecimal.ROUND_HALF_UP);
                         
-                        //System.out.print("i:"+(i+1)+" j:"+(j+1)+" x="+bd_x.doubleValue()+" y="+bd_y.doubleValue()+"\n");
+                        
 
 
 
@@ -240,7 +240,7 @@ public class Ex1_3{
                         }
 
                         if(frag == 0){
-                            //arr_intersection[count_intersection].num = N + count_intersection;    
+                            
                             arr_intersection[count_intersection].x = bd_x.doubleValue();
                             arr_intersection[count_intersection].y = bd_y.doubleValue();
                             count_intersection++;
@@ -365,9 +365,6 @@ public class Ex1_3{
                             }
                             
                         }
-
-                        
-
                         count_line_intersec++;
                     }
                 }
@@ -471,17 +468,7 @@ public class Ex1_3{
             
         }
 
-        /*
-        for(i=0;i<N+count_intersection;i++){
-            for(j=0;j<N+count_intersection;j++){
-                System.out.print(array_dijkstra[i][j] + " ");
-                if(j==N+count_intersection-1){
-                    System.out.print("\n");
-                }
-            }
-        }
-        */
-
+        
         //Qの処理
         for(i=0;i<Q;i++){
             int start=0,end=0;
@@ -558,21 +545,6 @@ public class Ex1_3{
                 System.out.printf("%.5f\n",dist[end]);
             }
         }
-        //確認
-        for(i=0;i<N+count_intersection;i++){
-            for(j=0;j<N+count_intersection;j++){
-                System.out.print(array_dijkstra[i][j]+" ");
-                if(j==N+count_intersection-1) System.out.println("");
-            }
-        }
-        for(i=0;i<count_intersection;i++){
-            System.out.println("num="+arr_intersection[i].num + " x="+arr_intersection[i].x+" y="+arr_intersection[i].y);
-        }
-        System.out.println("count="+count_tmp);
-
-
-
-
 
     }
 }
