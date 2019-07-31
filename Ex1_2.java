@@ -127,7 +127,17 @@ public class Ex1_2{
                     intersection[j-1].y = intersection[j].y;
                     intersection[j].x = temp_x;
                     intersection[j].y = temp_y;
+                }else if(intersection[j-1].x == intersection[j].x){
+                    if(intersection[j-1].y > intersection[j].y){
+                        temp_x = intersection[j-1].x;
+                        temp_y = intersection[j-1].y;
+                        intersection[j-1].x = intersection[j].x;
+                        intersection[j-1].y = intersection[j].y;
+                        intersection[j].x = temp_x;
+                        intersection[j].y = temp_y;
+                    }
                 }
+
             }
         }
 
